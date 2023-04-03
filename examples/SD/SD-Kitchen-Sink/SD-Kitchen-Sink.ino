@@ -3,6 +3,10 @@
 #include "FS.h"
 #include "SD.h"
 #include "SPI.h"
+#include <BDL.h>
+
+BDL dbl;
+
 
 void listDir(fs::FS &fs, const char * dirname, uint8_t levels){
   Serial.printf("Listing directory: %s\n", dirname);
@@ -163,6 +167,7 @@ void testFileIO(fs::FS &fs, const char * path){
 
 void setup(){
   Serial.begin(115200);
+  dbl.begin();
   if(!SD.begin(5)){
     Serial.println("Card Mount Failed");
     return;

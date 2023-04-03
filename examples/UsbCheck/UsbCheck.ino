@@ -1,26 +1,26 @@
-#include <BMS3.h>
+#include <BDL.h>
 
-BMS3 bms3;
+BDL bdl;
 
 void setup() {
   Serial.begin(115200);
 
   // Initialize all board peripherals, call this first
-  bms3.begin();
+  dbl.begin();
 
   // Brightness is 0-255. We set it to 1/3 brightness here
-  bms3.setPixelBrightness(255 / 3);
+  dbl.setPixelBrightness(255 / 3);
 } 
 
 void loop() {
 
-  bool USB = bms3.getVbusPresent();
+  bool USB = dbl.getVbusPresent();
     // If USB power is present
     if(USB == true){
-      bms3.setPixelColor(green);
+      dbl.setPixelColor(green);
     }
     if (USB == false) {
-      bms3.setPixelColor(red);
+      dbl.setPixelColor(red);
      
 
       }
