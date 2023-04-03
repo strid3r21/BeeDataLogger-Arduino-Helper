@@ -1,6 +1,6 @@
 // please note that when the USB is plugged in it is actively charging the lipo battery which means the battery monitoring
-// will report the battery as being fully charged. unplug the USB to see the true voltage of the battery by the RGB color or 
-// or by sending the reading via MQTT.
+// will report the battery as being fully charged. unplug the USB to see the true voltage of the battery by the RGB color, 
+//  by sending the reading via MQTT or by saving the battery to the SD card.
 
 #include <BDL.h>
 

@@ -6,21 +6,22 @@ void setup() {
   Serial.begin(115200);
 
   // Initialize all board peripherals, call this first
-  dbl.begin();
+  bdl.begin();
 
   // Brightness is 0-255. We set it to 1/3 brightness here
-  dbl.setPixelBrightness(255 / 3);
+  bdl.setPixelBrightness(255 / 3);
 } 
 
 void loop() {
 
-  bool USB = dbl.getVbusPresent();
-    // If USB power is present
+  bool USB = bdl.getVbusPresent();
+    // Check is usb is connected. make sure to use a lipo battery as well as otherwise when you unplug
+    // the usb the board will shut off and wont show you the red led indicator that no USB is detected.
     if(USB == true){
-      dbl.setPixelColor(green);
+      bdl.setPixelColor(green);
     }
     if (USB == false) {
-      dbl.setPixelColor(red);
+      bdl.setPixelColor(red);
      
 
       }

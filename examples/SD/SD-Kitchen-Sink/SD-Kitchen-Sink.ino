@@ -167,8 +167,11 @@ void testFileIO(fs::FS &fs, const char * path){
 
 void setup(){
   Serial.begin(115200);
+  while(!Serial){ // wait for serial port to connect. Needed for native USB
+    delay(100);
+  }
   dbl.begin();
-  if(!SD.begin(5)){
+  if(!SD.begin()){
     Serial.println("Card Mount Failed");
     return;
   }
