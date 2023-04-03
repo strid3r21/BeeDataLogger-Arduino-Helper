@@ -1,6 +1,6 @@
-# Bee Motion S3 Arduino Helper Library
+# Bee Data Logger Arduino Helper Library
 
-This is the helper library for The Bee Motion S3.
+This is the helper library for The Bee Data Logger.
 
 Examples can be found in the [examples directory](./examples/), these can also be loaded from the examples menu in the Arduino IDE.
 
@@ -36,9 +36,6 @@ static uint32_t colorWheel(uint8_t pos);
 
 // Get the battery voltage in volts
 float getBatteryVoltage();
-
-// Get the light sensor in volts (0-3.3)
-float getLight();
 
 // Detect if VBUS (USB power) is present
 bool getVbusPresent();
