@@ -1,4 +1,4 @@
-
+// this example shows all the built in functionality of the SD library.
 
 #include "FS.h"
 #include "SD.h"
