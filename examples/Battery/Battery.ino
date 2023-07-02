@@ -1,6 +1,3 @@
-// please note that when the USB is plugged in it is actively charging the lipo battery which means the battery monitoring
-// will report the battery as being fully charged. unplug the USB to see the true voltage of the battery by the RGB color, 
-//  by sending the reading via MQTT or by saving the battery to the SD card.
 
 #include <BDL.h>
 
@@ -30,7 +27,6 @@ void checkBattery() {
   int battery_precentage = map(battery,3.0,4.2,0,100);
   Serial.print(String("Battery Precentage: ") + battery_precentage);
   Serial.println("%");
-  
 
   if (dbl.getVbusPresent()) {
     // If USB power is present
@@ -57,11 +53,11 @@ void checkBattery() {
     } else if (battery < 3.3) {
       // Below 3.3v - red
       dbl.setPixelColor(red);
-    } else if (battery < 3.6) {
-      // Below 3.6v (around 50%) - orange
+    } else if (battery < 3.8) {
+      // Below 3.8v (around 50%) - orange
       dbl.setPixelColor(orange);
     } else {
-      // Above 3.6v - green
+      // Above 3.8v - green
       dbl.setPixelColor(green);
     }
   }
