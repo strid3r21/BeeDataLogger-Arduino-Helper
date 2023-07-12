@@ -139,5 +139,5 @@ void loop() {
     //Append the data to file
     appendFile(SD, "/test.txt", dataMessage.c_str());
  
-  delay(5000);
+ 
 }

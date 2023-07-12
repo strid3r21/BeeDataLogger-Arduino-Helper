@@ -155,7 +155,7 @@ void setup() {
 
     //Append the data to file
     appendFile(SD, "/data.txt", dataMessage.c_str());
-    delay(5000);
+    
 
     Serial.flush(); 
   esp_deep_sleep_start();

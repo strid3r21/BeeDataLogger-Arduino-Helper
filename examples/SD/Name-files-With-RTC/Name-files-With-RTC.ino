@@ -145,5 +145,5 @@ void loop() {
     //Append the data to file
     appendFile(SD, theCurrentDate.c_str(), dataMessage.c_str()); // if there is already a file with the current date then we append our new data to that file.
  
-  delay(5000);
+  
 }
