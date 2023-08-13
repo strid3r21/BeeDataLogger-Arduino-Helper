@@ -37,6 +37,10 @@ static uint32_t colorWheel(uint8_t pos);
 // Get the battery voltage in volts
 float getBatteryVoltage();
 
+// Get the Voltage of any given ADC pin 3 through 9.
+// Example: bdl.getADCVoltage(3); will return the ADC voltage of pin 3.
+float getADCVoltage();
+
 // Detect if VBUS (USB power) is present
 bool getVbusPresent();
 ```
