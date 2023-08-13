@@ -113,7 +113,13 @@ class BDL {
       return (float)(upper_divider + lower_divider) / lower_divider / 1000 * millivolts;
     }
 	
-
+	float getADCVoltage(int pinNumber){
+		int _pin = pinNumber;
+		pinMode(_pin, INPUT);
+		float userPin = analogRead(_pin);
+		float voltage_value = (userPin * 3.3 ) / (4095);
+		return(voltage_value);
+	}
 
 
     bool getVbusPresent() {
