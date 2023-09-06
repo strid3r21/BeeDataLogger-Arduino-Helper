@@ -24,7 +24,7 @@ void checkBattery() {
 
 
   //or we can map the voltage to a precentage between 0-100 for easier reading
-  int battery_precentage = map(battery,3.0,4.2,0,100);
+  int battery_precentage = map(battery*100L,300,420,0,100);
   Serial.print(String("Battery Precentage: ") + battery_precentage);
   Serial.println("%");
 
