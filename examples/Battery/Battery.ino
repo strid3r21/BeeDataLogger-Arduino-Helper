@@ -1,16 +1,16 @@
 
 #include <BDL.h>
 
-BDL dbl;
+BDL bdl;
 
 void setup() {
   Serial.begin(115200);
 
   // Initialize all board peripherals, call this first
-  dbl.begin();
+  bdl.begin();
 
   // Brightness is 0-255. We set it to 1/3 brightness here
-  dbl.setPixelBrightness(255 / 3);
+  bdl.setPixelBrightness(255 / 3);
 }
 
 // Gets the battery voltage and shows it using the neopixel LED.
@@ -18,7 +18,7 @@ void setup() {
 // find values that work for you.
 void checkBattery() {
   // gets the battery voltage and stores it in the variable ""battery"
-  float battery = dbl.getBatteryVoltage(); 
+  float battery = bdl.getBatteryVoltage(); 
   // we can print out the battery voltage. 4.2v is full and 3.0v is dead 
   Serial.println(String("Battery: ") + battery);
 
@@ -28,22 +28,22 @@ void checkBattery() {
   Serial.print(String("Battery Precentage: ") + battery_precentage);
   Serial.println("%");
 
-  if (dbl.getVbusPresent()) {
+  if (bdl.getVbusPresent()) {
     // If USB power is present
     if(battery < 2.0){
       // if no battery detected turn off RGB LED
-      dbl.setPixelColor(off);
+      bdl.setPixelColor(off);
     }
     if (battery >= 2.0 && battery <= 4.0) {
-      dbl.setPixelColor(orange);
+      bdl.setPixelColor(orange);
       for(int i = 0; i < 100; i++){
-      dbl.setPixelBrightness(i);
+      bdl.setPixelBrightness(i);
       delay(10);
 
       }
     } if(battery > 4.0){
       // almost full
-      dbl.setPixelColor(green);
+      bdl.setPixelColor(green);
     }
   } else {
     // Else, USB power is not present (running from battery)
@@ -52,13 +52,13 @@ void checkBattery() {
       //esp_deep_sleep_start();
     } else if (battery < 3.3) {
       // Below 3.3v - red
-      dbl.setPixelColor(red);
+      bdl.setPixelColor(red);
     } else if (battery < 3.8) {
       // Below 3.8v (around 50%) - orange
-      dbl.setPixelColor(orange);
+      bdl.setPixelColor(orange);
     } else {
       // Above 3.8v - green
-      dbl.setPixelColor(green);
+      bdl.setPixelColor(green);
     }
   }
 }
