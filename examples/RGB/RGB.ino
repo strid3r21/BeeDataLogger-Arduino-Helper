@@ -1,4 +1,4 @@
-#include <BDL.h> //include the bee motion s3 helper library
+#include <BDL.h> //include the bee data logger helper library
 
 BDL bdl;  //pull the bdl class from the helper and name it bdl so we can use it below;
 
